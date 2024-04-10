@@ -1,11 +1,10 @@
 <!-- Script JS -->
 <script>
-    import Entity from "./components/Entity.svelte";
 </script>
 
 <!-- Estructura contenido HTML -->
-<Entity> </Entity>
 
 <!-- Estilos CSS -->
 <style>
+    @import '../../public/css/entity_styles.css';
 </style>
