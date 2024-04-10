@@ -1,0 +1,1 @@
+src/components/AgeData.svelte src/components/Landing.svelte src/components/Languages.svelte src/components/TdRank.svelte src/components/Teachers.svelte src/components/WorkYear.svelte
