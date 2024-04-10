@@ -1,0 +1,33 @@
+name,language,age_1,age_2,td_rank,work_year,teacher
+Benjamin Toledo,Python,14,14,"5,3,4,2,1",2019,Gravano
+Camila Cauzzo,Python,18,18,"4,2,5,1,3",2025,Pablo
+Camilo Suárez Canónico,C++,16,17,"5,3,4,2,1",2024,Javier
+Catalina Dolhare,Python,18,18,"4,2,5,3,1",2025,Pablo
+Caterina Villegas,Python,18,18,"4,1,5,2,3",2025,Emma
+Emiliana Verdun,C++,18,18,"4,2,1,3,5",2024,Gravano
+Estanislao Rios Zgaib,C++,17,18,"1,3,5,2,4",2026,Agustin
+Ezequiel Grinblat,Python ,16,19,"4,3,3,3,4",2025,David
+Federico Peitti,Assembler,13,18,"2,5,3,1,4",2024,Gravano
+Felipe Caracoix,C++,14,18,"2,4,1,5,3",2025,Emma
+Franco Setti,C++,16,16,"5,2,1,3,4",2025,Javier
+Gonzalo García Vence,Python,15,18,"(6,3,2,4,1)",2024,Ramiro
+Guido Salem,C++,18,18,"4,2,5,1,3",2024,David
+Iara Guglielmetti,C,15,18,"2,4,1",2025,David
+Isabel Nuñez,C++,17,17,"3,5,2,4,1",2024,Gervasio 
+Ivan Mondrzak,Python,17,17,"5, 3, 1, 2, 4",2023,Javier
+Jaime Amigo,Python,17,17,"4,2,5,1,3",2023,Emma
+Joaquín Schanz,Python,17,18,"5, 4, 1, 3, 2",2024,Javier
+Lara Barijhoff,C++,16,18,"2, 4, 1, 3, 5",2025,Emma
+Manuel Matías Milde,Python,18,18,"5,4,1,3,2",2025,Lucio
+María Agustina Giménez Costa,Python,18,18,"7,4,6,5,3,1,2",2024,David
+Mariana Zunino,C++,16,18,"5,3,4,1,2",2024,David
+Mariano Sanson,Python,16,18,"5,3,4,1,2",2023,Javier
+Nazaret Seranusoglu,Swift ,17,17,"5,3,2,4,1",2024,Javier
+Nicolas Wolodarsky Franke,Python,Nunca,19,"2,4,5,3,1",2022,David
+Serena Marelli,C++,18,18,"3,5,1,2",2024,Gervasio
+Tomás Gallo,C++,17,18,"5,3,2,4,1",2024,Javier
+Tomas Ward,Dart,12,13,"5,4,2,1,3",2023,David
+Valentina Gayo,python,18,18,"4,5,1,2,3",2023,Emma
+Valentina Vitetta,Python,16,16,"3,5,4,1,2",2022,Gravano
+Tomas Curzio,Python,17,17,"2,5,4,1,3",2025,David
+Juan Ignacio Castore,Java,18,18,"2,5,4,3,1",2024,David
