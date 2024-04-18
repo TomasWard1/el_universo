@@ -2,6 +2,8 @@
 <script>
     import * as d3 from "d3";
     import { onMount } from "svelte";
+    import Landing from "./components/Landing.svelte";
+    import AggregatedData from "./components/AggregatedData.svelte";
 
     let alumnos = [];
 
@@ -20,7 +22,7 @@
     //Mapear language a el color de la sombra de la entidad
     let shadowColor = d3.scaleOrdinal(
         ["Python", "C++", "Assembler", "Swift", "Dart", "Java"],
-        ["#FAFF00", "FF00E5", "FFA800","FF0000","00FFF0","00FF0A"],
+        ["#FAFF00", "FF00E5", "FFA800", "FF0000", "00FFF0", "00FF0A"],
     );
 
     onMount(() => {
@@ -29,11 +31,22 @@
             console.log(alumnos);
         });
     });
-
-    
 </script>
 
 <!-- Estructura contenido HTML -->
+
+<main>
+    <Landing></Landing>
+    <AggregatedData></AggregatedData>
+
+    <div class="fullscreen-block"></div>
+
+    <div class="fullscreen-block" style="background-color: red;"></div>
+
+    <div class="fullscreen-block" style="background-color: green;"></div>
+
+    <div class="fullscreen-block" style="background-color: yellow;"></div>
+</main>
 
 <!-- Estilos CSS -->
 <style>

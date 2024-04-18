@@ -2,4 +2,102 @@
 
 body {
     background-color: black;
+    overflow-x: hidden;
+}
+
+h1 {
+    color: white;
+    font-family: 'Ubuntu';
+    font-size: 50px;
+    /* display: block; */
+}
+
+
+h2 {
+    color: white;
+    padding-left: 2px;
+    font-weight: 400;
+    font-family: 'Geologica';
+    font-size: 22px;
+}
+
+p {
+    color: white;
+    padding-left: 2px;
+    font-weight: 200;
+    font-family: 'Geologica';
+    font-size: 18px;
+}
+
+.fade-in {
+    opacity: 0;
+    animation: fade-in 4.5s ease-in-out forwards;
+}
+
+.typewriter h1 {
+    overflow: hidden;
+    /* Ensures the content is not revealed until the animation */
+    border-right: .15em solid white;
+    /* The typwriter cursor */
+    white-space: nowrap;
+    /* Keeps the content on a single line */
+    margin: 0 auto;
+    /* Gives that scrolling effect as the typing happens */
+    letter-spacing: .15em;
+    /* Adjust as needed */
+    animation:
+        typing 3.5s steps(40, end),
+        blink-caret .75s step-end infinite;
+}
+
+.fullscreen-block {
+    max-width: 100%;
+    width: 100vw;
+    height: 100vh;
+    padding: 30px 30px 30px 30px;
+    scroll-snap-align: start;
+}
+
+.block-header {
+    width: 40vw;
+}
+
+main {
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    height: 100vh;
+}
+
+/* The typing effect */
+@keyframes typing {
+    from {
+        width: 0
+    }
+
+    to {
+        width: 100%
+    }
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+
+    from,
+    to {
+        border-color: transparent
+    }
+
+    50% {
+        border-color: white;
+    }
 }
