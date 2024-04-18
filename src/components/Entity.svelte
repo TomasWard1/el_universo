@@ -9,6 +9,8 @@
         outerRadius,
       })
     }
+
+    export let alumno;
   
 </script>
 

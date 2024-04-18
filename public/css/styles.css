@@ -68,6 +68,14 @@ main {
     height: 100vh;
 }
 
+.row {
+    display: flex; /* Use flexbox for layout */
+    flex-wrap: nowrap; /* Prevent wrapping to next line */
+    justify-content: flex-center; /* Align widgets to the start of the row */
+    align-items: center; /* Center widgets vertically */
+    gap: 10px; /* Spacing between widgets */
+}
+
 /* The typing effect */
 @keyframes typing {
     from {
