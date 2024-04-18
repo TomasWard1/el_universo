@@ -1,5 +1,6 @@
 <!-- Script JS -->
 <script>
+    import Entity from "./components/Entity.svelte";
     import * as d3 from "d3";
     import { onMount } from "svelte";
     import Landing from "./components/Landing.svelte";
@@ -32,8 +33,6 @@
         });
     });
 </script>
-
-<!-- Estructura contenido HTML -->
 
 <main>
     <Landing></Landing>
