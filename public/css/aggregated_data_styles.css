@@ -1,6 +1,6 @@
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    flex-grow: 1;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px 20px;
+    place-items: center;
 }

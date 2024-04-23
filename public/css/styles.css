@@ -59,7 +59,8 @@ p {
 }
 
 .block-header {
-    width: 40vw;
+    width: 60vw;
+    margin-bottom: 60px;
 }
 
 main {
@@ -71,10 +72,17 @@ main {
 .row {
     display: flex; /* Use flexbox for layout */
     flex-wrap: nowrap; /* Prevent wrapping to next line */
-    justify-content: flex-center; /* Align widgets to the start of the row */
+    justify-content: center; /* Align widgets to the start of the row */
     align-items: center; /* Center widgets vertically */
     gap: 10px; /* Spacing between widgets */
 }
+
+.column {
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    /* Add additional styling as needed */
+  }
 
 /* The typing effect */
 @keyframes typing {

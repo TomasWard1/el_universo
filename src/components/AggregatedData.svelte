@@ -12,21 +12,28 @@
     let internalCircleRadius = d3
         .scaleLinear()
         .domain([12, 18])
-        .range([0, 100]);
+        .range([30, 150]);
 
-    //Escalar age2 a radio del circulo externo de la entidad
+    // Escalar age2 a radio del circulo externo de la entidad
     let externalCircleRadius = d3
         .scaleLinear()
-        .domain([13, 19])
-        .range([0, 100]);
+        .domain([12, 18])
+        .range([30, 150]);
 
     //Mapear language a el color de la sombra de la entidad
-    let shadowColor = d3.scaleOrdinal(
-        ["Python", "C++", "Assembler", "Swift", "Dart", "Java"],
-        ["#FAFF00", "FF00E5", "FFA800", "FF0000", "00FFF0", "00FF0A"],
-    );
+    let shadowColorConverter = d3
+        .scaleOrdinal()
+        .domain(["Python", "C++", "Assembler", "Swift", "Dart", "Java"])
+        .range([
+            "#FAFF00",
+            "#FF00E5",
+            "#FFA800",
+            "#FF0000",
+            "#00FFF0",
+            "#00FF0A",
+        ]);
 
-    const itemsPerPage = 4; // Number of items per page
+    const itemsPerPage = 6; // Number of items per page
     let currentPage = writable(1); // Current page number
 
     let totalPages;
@@ -59,12 +66,6 @@
         currentPage = null; // Cleanup
     });
 
-    function gridPrev() {
-        if ($currentPage > 1) currentPage.update((n) => n - 1);
-    }
-    function gridNext() {
-        if ($currentPage < totalPages) currentPage.update((n) => n + 1);
-    }
 </script>
 
 <head>
@@ -72,9 +73,10 @@
 </head>
 
 <!-- Estructura contenido HTML -->
-<div class="fullscreen-block" style="background-color: black;">
+
+<div class="fullscreen-block" style="background-color: black; height:auto">
     <div class="block-header">
-        <h1>Únicos</h1>
+        <h1>Átomos que construyen una molécula</h1>
         <p>
             "Tecnología Digital? Y esa carrera? Que es tipo ingenieria?" No, no
             somos ingenieros. Somos mucho más que eso. Programadores,
@@ -82,16 +84,17 @@
             estudiante de TD pronto dominará el mundo.
         </p>
     </div>
-    <div class="row">
-        <button on:click={gridPrev}>Prev</button>
-
-        <div class="grid-container">
-            {#each alumnos.slice(($currentPage - 1) * itemsPerPage, $currentPage * itemsPerPage) as a}
-               <Entity></Entity>
-            {/each}
-        </div>
-        <button on:click={gridNext}>Next</button>
+    <div class="grid-container">
+        {#each alumnos as a}
+            <Entity
+                alumno={a}
+                {shadowColorConverter}
+                externalCircleRadiusConverter={externalCircleRadius}
+                internalCircleRadiusConverter={internalCircleRadius}
+            ></Entity>
+        {/each}
     </div>
+
 </div>
 
 <!-- Estilos CSS -->
