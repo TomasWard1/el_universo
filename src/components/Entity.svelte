@@ -21,31 +21,34 @@
 <!-- Estructura contenido HTML -->
 <div class="column">
   <div
-  class="persona"
-  style="filter: drop-shadow(2px 2px 50px {shadowColorConverter(
-    alumno.language,
-  )});"
->
-  <div class="circle-container">
-    {#if alumno.work_year <= 2024}
-      <div class="diagonal"></div>
-    {/if}
-    <div
-      class="circle"
-      style="width:{externalRadius}px; height: {externalRadius}px;  background-color: white;"
-    ></div>
-    <div
-      class="circle"
-      style="width:{internalRadius}px; height: {internalRadius}px;  background-color: {shadowColorConverter(
-        alumno.language,
-      )};"
-    ></div>
+    class="persona"
+    style="filter: drop-shadow(2px 2px 50px {shadowColorConverter(
+      alumno.language,
+    )});"
+  >
+    <div class="circle-container">
+      {#if alumno.work_year <= 2024}
+        <div class="diagonal"></div>
+      {/if}
+      <div
+        class="outer-circle"
+        style="top: calc(50% - {externalRadius/2}px + {externalRadius}px * cos(45deg)); /* Adjust angle as needed */
+      left: calc(50% - {externalRadius/2.4}px + {externalRadius}px * sin(45deg)); /* Adjust angle as needed */"
+      ></div>
+      <div
+        class="inner-circle"
+        style="display: inline;width:{externalRadius}px; height: {externalRadius}px;  background-color: white; justify-content: center; align-items: center;"
+      ></div>
+      <div
+        class="inner-circle"
+        style="width:{internalRadius}px; height: {internalRadius}px;  background-color: {shadowColorConverter(
+          alumno.language,
+        )};"
+      ></div>
+    </div>
   </div>
-
+  <p style="padding-top: 40px;">{alumno.name}</p>
 </div>
-<p style="padding-top: 40px;">{alumno.name}</p>
-</div>
-
 
 <!-- Estilos CSS -->
 <style>

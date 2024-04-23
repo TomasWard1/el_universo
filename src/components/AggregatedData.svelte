@@ -23,7 +23,7 @@
     //Mapear language a el color de la sombra de la entidad
     let shadowColorConverter = d3
         .scaleOrdinal()
-        .domain(["Python", "C++", "Assembler", "Swift", "Dart", "Java"])
+        .domain(["Python", "C++", "Assembler", "Swift", "Dart", "Java", "C"])
         .range([
             "#FAFF00",
             "#FF00E5",
@@ -31,6 +31,7 @@
             "#FF0000",
             "#00FFF0",
             "#00FF0A",
+            "#7000FF",
         ]);
 
     const itemsPerPage = 6; // Number of items per page
@@ -65,7 +66,6 @@
     onDestroy(() => {
         currentPage = null; // Cleanup
     });
-
 </script>
 
 <head>
@@ -94,7 +94,6 @@
             ></Entity>
         {/each}
     </div>
-
 </div>
 
 <!-- Estilos CSS -->
