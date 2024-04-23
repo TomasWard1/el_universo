@@ -70,12 +70,12 @@ main {
 }
 
 .row {
-    display: flex; /* Use flexbox for layout */
-    flex-wrap: nowrap; /* Prevent wrapping to next line */
-    justify-content: center; /* Align widgets to the start of the row */
-    align-items: center; /* Center widgets vertically */
-    gap: 10px; /* Spacing between widgets */
-}
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  
 
 .column {
     display: flex;

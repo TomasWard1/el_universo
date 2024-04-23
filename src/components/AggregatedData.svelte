@@ -25,6 +25,19 @@
         .scaleOrdinal()
         .domain(["Python", "C++", "Assembler", "Swift", "Dart", "Java", "C"])
         .range([
+            "rgba(250, 255, 0, 0.7)", // #FAFF00 with 50% opacity
+            "rgba(255, 0, 229, 0.7)", // #FF00E5 with 50% opacity
+            "rgba(255, 168, 0, 0.7)", // #FFA800 with 50% opacity
+            "rgba(255, 0, 0, 0.7)", // #FF0000 with 50% opacity
+            "rgba(0, 255, 240, 0.7)", // #00FFF0 with 50% opacity
+            "rgba(0, 255, 10, 0.7)", // #00FF0A with 50% opacity
+            "rgba(112, 0, 255, 0.7)", // #7000FF with 50% opacity
+        ]);
+
+    let circleColorConverter = d3
+        .scaleOrdinal()
+        .domain(["Python", "C++", "Assembler", "Swift", "Dart", "Java", "C"])
+        .range([
             "#FAFF00",
             "#FF00E5",
             "#FFA800",
@@ -32,6 +45,40 @@
             "#00FFF0",
             "#00FF0A",
             "#7000FF",
+        ]);
+
+    let teacherImageConverter = d3
+        .scaleOrdinal()
+        .domain([
+            "Gravano",
+            "Pablo",
+            "Javier",
+            "Emma",
+            "David",
+            "Gervasio",
+            "Lucio",
+        ])
+        .range([
+            "public/images/gravano.png",
+            "public/images/pablo.png",
+            "public/images/javier.png",
+            "public/images/emma.png",
+            "public/images/david.png",
+            "public/images/gerva.png",
+            "public/images/lucio.png",
+        ]);
+        
+ 
+
+        let tdLogoConverter = d3
+        .scaleOrdinal()
+        .domain(["1","2","3","4","5"])
+        .range([
+            "public/images/td1Logo.svg",
+            "public/images/td2Logo.svg",
+            "public/images/td3Logo.svg",
+            "public/images/td4Logo.svg",
+            "public/images/td5Logo.svg",
         ]);
 
     const itemsPerPage = 6; // Number of items per page
@@ -84,10 +131,14 @@
             estudiante de TD pronto dominará el mundo.
         </p>
     </div>
+
     <div class="grid-container">
         {#each alumnos as a}
             <Entity
                 alumno={a}
+                {tdLogoConverter}
+                {teacherImageConverter}
+                {circleColorConverter}
                 {shadowColorConverter}
                 externalCircleRadiusConverter={externalCircleRadius}
                 internalCircleRadiusConverter={internalCircleRadius}
