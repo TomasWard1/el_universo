@@ -1,8 +1,3 @@
-.inner-circle {
-  border-radius: 50%;
-
-}
-
 .circle {
   width: 40px;
   height: 40px;
@@ -11,7 +6,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 2;
+}
+
+.nucleus {
+  position: absolute;
+  border-radius: 50%;
 }
 
 .external {

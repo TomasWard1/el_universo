@@ -160,8 +160,6 @@
         {#each alumnos as a}
             <Entity
                 alumno={a}
-                {tdLogoConverter}
-                {teacherImageConverter}
                 {circleColorConverter}
                 {shadowColorConverter}
                 externalCircleRadiusConverter={externalCircleRadius}
