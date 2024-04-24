@@ -1,12 +1,32 @@
 <!-- Script JS -->
-<script>
+<script lang="ts">
     import { onMount, onDestroy } from "svelte";
     import { writable } from "svelte/store";
     import Entity from "./Entity.svelte";
     import * as d3 from "d3";
 
+    type Alumno = {
+        age_1: number;
+        age_2: number;
+        language: string;
+        name: string;
+        td_rank: number[];
+        teacher: string;
+        work_year: number;
+    };
+
+    type AlumnoData = {
+        age_1: number;
+        age_2: number;
+        language: string;
+        name: string;
+        td_rank: string;
+        teacher: string;
+        work_year: number;
+    };
+
     //Cargar csv
-    let alumnos = [];
+    let alumnos: Alumno[] = [];
 
     //Escalar age1 a radio del circulo interno de la entidad
     let internalCircleRadius = d3
@@ -67,12 +87,10 @@
             "public/images/gerva.png",
             "public/images/lucio.png",
         ]);
-        
- 
 
-        let tdLogoConverter = d3
+    let tdLogoConverter = d3
         .scaleOrdinal()
-        .domain(["1","2","3","4","5"])
+        .domain(["1", "2", "3", "4", "5"])
         .range([
             "public/images/td1Logo.svg",
             "public/images/td2Logo.svg",
@@ -91,7 +109,13 @@
 
     onMount(() => {
         d3.csv("./data/data.csv", d3.autoType).then((data) => {
-            alumnos = data;
+            alumnos = data.map((row: AlumnoData) => {
+                return {
+                    ...row,
+                    td_rank: row.td_rank.split(",").map(Number),
+                };
+            });
+
             console.log(alumnos);
         });
 
