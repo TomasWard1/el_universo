@@ -120,7 +120,7 @@
     left: calc(50% - 0.5vmin);
     top: -0.5vmin;
     transform: rotateX(90deg);
-    animation: orbit-electron-particle var(--tim) linear 0s infinite;
+    /* animation: orbit-electron-particle var(--tim) linear 0s infinite; */
     background:
         radial-gradient(circle at 40% 60%, #fff0, 3vmin, #00000040 calc(3vmin + 1px) 100%),
         radial-gradient(circle at 45% 73%, var(--entityColor), 0.3vmin, #fff0 calc(0.3vmin + 1px) 100%),

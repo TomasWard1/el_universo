@@ -26,7 +26,7 @@
             {#each { length: alumno.td_rank[0] } as _, i}
                 <div
                     class="electron"
-                    style="--entityColor: {entityColor}; --tim: 7s; --pos: rotateY(20deg); --initPos: rotate({i *
+                    style="--entityColor: {entityColor}; --tim: 15s; --pos: rotateY(20deg); --initPos: rotate({i *
                         (360 / alumno.td_rank[0])}deg); --endPos: rotate({i *
                         (360 / alumno.td_rank[0]) -
                         360}deg)"
