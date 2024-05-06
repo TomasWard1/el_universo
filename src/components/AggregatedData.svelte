@@ -2,7 +2,7 @@
 <script lang="ts">
     import { onMount, onDestroy } from "svelte";
     import { writable } from "svelte/store";
-    import Entity from "./Entity.svelte";
+    import Atom from "./Atom.svelte";
     import * as d3 from "d3";
 
     type Alumno = {
@@ -158,13 +158,13 @@
 
     <div class="grid-container">
         {#each alumnos as a}
-            <Entity
+            <Atom
                 alumno={a}
                 {circleColorConverter}
                 {shadowColorConverter}
                 externalCircleRadiusConverter={externalCircleRadius}
                 internalCircleRadiusConverter={internalCircleRadius}
-            ></Entity>
+            ></Atom>
         {/each}
     </div>
 </div>
