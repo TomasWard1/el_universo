@@ -87,25 +87,6 @@
             "public/images/td5Logo.svg",
         ]);
 
-    let workYearConverter = d3
-        .scaleOrdinal()
-        .domain(["1", "2", "3", "4", "5"])
-        .range([
-            "public/images/td1Logo.svg",
-            "public/images/td2Logo.svg",
-            "public/images/td3Logo.svg",
-            "public/images/td4Logo.svg",
-            "public/images/td5Logo.svg",
-        ]);
-
-    const itemsPerPage = 6; // Number of items per page
-    let currentPage = writable(1); // Current page number
-
-    let totalPages;
-    $: {
-        totalPages = Math.ceil(alumnos.length / itemsPerPage);
-    }
-
     onMount(() => {
         d3.csv("./data/data.csv", d3.autoType).then((data) => {
             alumnos = data.map((row: AlumnoData) => {
@@ -117,24 +98,6 @@
 
             console.log(alumnos);
         });
-
-        const handleKeyPress = (event) => {
-            if (event.key === "ArrowLeft") {
-                if ($currentPage > 1) currentPage.update((n) => n - 1);
-            } else if (event.key === "ArrowRight") {
-                if ($currentPage < totalPages) currentPage.update((n) => n + 1);
-            }
-        };
-
-        window.addEventListener("keydown", handleKeyPress);
-
-        return () => {
-            window.removeEventListener("keydown", handleKeyPress);
-        };
-    });
-
-    onDestroy(() => {
-        currentPage = null; // Cleanup
     });
 </script>
 

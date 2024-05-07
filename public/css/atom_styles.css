@@ -5,8 +5,10 @@
     align-items: center;
     justify-content: center;
 }
+
 .atom:hover {
-    transform: scale(1.5); /* Adjust the scale factor as needed */
+    transform: scale(1.5);
+    /* Adjust the scale factor as needed */
 }
 
 .atom-body * {
@@ -51,13 +53,22 @@
     background-image: -ms-linear-gradient(-45deg, rgba(255, 255, 220, .3) 0%, transparent 100%);
 }
 
+.nucleus svg {
+    position: absolute;
+    top: -40%;
+    left: 62%;
+    transform: translateX(-50%);
+    width: 3vmin;
+    height: 3vmin;
+}
+
 /*** ELECTRONS ***/
 
 .orbit {
     position: absolute;
     border-radius: 100%;
-    border: 4px solid  var(--entityColor);
-    transform: rotateX(80deg) rotateY(20deg)
+    border: 4px solid var(--entityColor);
+    transform: rotateX(80deg) var(--pos)
 }
 
 .electron {
