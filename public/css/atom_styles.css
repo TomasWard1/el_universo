@@ -5,6 +5,9 @@
     align-items: center;
     justify-content: center;
 }
+.atom:hover {
+    transform: scale(1.5); /* Adjust the scale factor as needed */
+}
 
 .atom-body * {
     transform-style: preserve-3d;
@@ -50,53 +53,18 @@
 
 /*** ELECTRONS ***/
 
-.orbits {
+.orbit {
     position: absolute;
-    width: 100%;
-    height: 100%;
     border-radius: 100%;
-    /* animation: orbit-spin 180s linear 0s infinite; */
-}
-
-@keyframes orbit-spin {
-    0% {
-        transform: rotate(0deg);
-    }
-
-    100% {
-        transform: rotate(360deg);
-    }
-}
-
-.orbits:before,
-.orbits:after {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border-radius: 100%;
-    animation: orbit-spin 15s linear 0s infinite;
-    border: 0.2vmin dotted red;
-    filter: blur(1px);
-    opacity: 0.5;
-}
-
-.orbits:after {
-    width: 60%;
-    height: 60%;
-    top: 20%;
-    left: 20%;
-    animation-direction: reverse;
-    animation-duration: 90s;
+    border: 4px solid  var(--entityColor);
+    transform: rotateX(80deg) rotateY(20deg)
 }
 
 .electron {
-
     position: absolute;
-    width: 100%;
-    height: 100%;
     box-shadow: -10px 5px 3px -5px #CDDC3920 inset, 10px 0px 3px -5px #CDDC3920;
     border-radius: 100%;
+    transform: rotateX(80deg) var(--pos) var(--initPos);
     transition: all 0.4s ease 0s;
     animation: orbit-electron var(--tim) linear calc(var(--tim) * -0.5) infinite;
 }
@@ -112,15 +80,15 @@
 }
 
 .electron-background {
-    width: 1vmin;
-    height: 1vmin;
+    width: 2vmin;
+    height: 2vmin;
     position: absolute;
     border-radius: 100%;
     /* box-shadow: 0 0 9px 0px var(--entityColor); */
     left: calc(50% - 0.5vmin);
     top: -0.5vmin;
     transform: rotateX(90deg);
-    /* animation: orbit-electron-particle var(--tim) linear 0s infinite; */
+    animation: orbit-electron-particle var(--tim) linear 0s infinite;
     background:
         radial-gradient(circle at 40% 60%, #fff0, 3vmin, #00000040 calc(3vmin + 1px) 100%),
         radial-gradient(circle at 45% 73%, var(--entityColor), 0.3vmin, #fff0 calc(0.3vmin + 1px) 100%),
@@ -130,10 +98,10 @@
 
 @keyframes orbit-electron-particle {
     0% {
-        transform: rotateX(90deg) rotateY(-360deg);
+        transform: rotateX(90deg) var(--endPos);
     }
 
     100% {
-        transform: rotateX(90deg) rotateY(0deg);
+        transform: rotateX(90deg) var(--initPos);
     }
 }

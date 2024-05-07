@@ -28,30 +28,18 @@
     //Cargar csv
     let alumnos: Alumno[] = [];
 
-    //Escalar age1 a radio del circulo interno de la entidad
-    let internalCircleRadius = d3
-        .scaleLinear()
-        .domain([12, 18])
-        .range([30, 150]);
-
-    // Escalar age2 a radio del circulo externo de la entidad
-    let externalCircleRadius = d3
-        .scaleLinear()
-        .domain([12, 18])
-        .range([30, 150]);
-
     //Mapear language a el color de la sombra de la entidad
     let shadowColorConverter = d3
         .scaleOrdinal()
         .domain(["Python", "C++", "Assembler", "Swift", "Dart", "Java", "C"])
         .range([
-            "rgba(250, 255, 0, 0.7)", // #FAFF00 with 50% opacity
-            "rgba(255, 0, 229, 0.7)", // #FF00E5 with 50% opacity
-            "rgba(255, 168, 0, 0.7)", // #FFA800 with 50% opacity
-            "rgba(255, 0, 0, 0.7)", // #FF0000 with 50% opacity
-            "rgba(0, 255, 240, 0.7)", // #00FFF0 with 50% opacity
-            "rgba(0, 255, 10, 0.7)", // #00FF0A with 50% opacity
-            "rgba(112, 0, 255, 0.7)", // #7000FF with 50% opacity
+            "rgba(250, 255, 0, 0.5)", // #FAFF00 with 50% opacity
+            "rgba(255, 0, 229, 0.5)", // #FF00E5 with 50% opacity
+            "rgba(255, 168, 0, 0.5)", // #FFA800 with 50% opacity
+            "rgba(255, 0, 0, 0.5)", // #FF0000 with 50% opacity
+            "rgba(0, 255, 240, 0.5)", // #00FFF0 with 50% opacity
+            "rgba(0, 255, 10, 0.5)", // #00FF0A with 50% opacity
+            "rgba(112, 0, 255, 0.5)", // #7000FF with 50% opacity
         ]);
 
     let circleColorConverter = d3
@@ -89,6 +77,17 @@
         ]);
 
     let tdLogoConverter = d3
+        .scaleOrdinal()
+        .domain(["1", "2", "3", "4", "5"])
+        .range([
+            "public/images/td1Logo.svg",
+            "public/images/td2Logo.svg",
+            "public/images/td3Logo.svg",
+            "public/images/td4Logo.svg",
+            "public/images/td5Logo.svg",
+        ]);
+
+    let workYearConverter = d3
         .scaleOrdinal()
         .domain(["1", "2", "3", "4", "5"])
         .range([
@@ -162,8 +161,6 @@
                 alumno={a}
                 {circleColorConverter}
                 {shadowColorConverter}
-                externalCircleRadiusConverter={externalCircleRadius}
-                internalCircleRadiusConverter={internalCircleRadius}
             ></Atom>
         {/each}
     </div>
