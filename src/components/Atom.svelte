@@ -28,6 +28,7 @@
             </svg>
             
            {/if}
+           <h1 style="text-align: center; color: black">J</h1>
            
           
         </div>

@@ -107,7 +107,7 @@
 
 <!-- Estructura contenido HTML -->
 
-<div class="fullscreen-block" style="background-color: black; height:auto">
+<div class="fullscreen-block" style="height:auto; width: 100vw;">
     <div class="block-header">
         <h1>Átomos que construyen una molécula</h1>
         <p>
@@ -127,8 +127,8 @@
             ></Atom>
         {/each}
     </div>
-</div>
 
+</div>
 <!-- Estilos CSS -->
 <style>
 </style>

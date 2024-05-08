@@ -1,5 +1,9 @@
-/* Estilos globales */
 
+@font-face {
+    font-family: 'Anurati';
+    src: url('../fonts/Anurati-Regular.woff') format('woff'),
+    /* Add other font properties if needed */
+}
 body {
 	overflow: hidden;
     background-color: black;	
@@ -7,8 +11,10 @@ body {
 
 h1 {
     color: white;
-    font-family: 'Ubuntu';
-    font-size: 50px;
+    font-family: 'Anurati';
+    letter-spacing: 10px;
+    font-size: 60px;
+    text-align: center
     /* display: block; */
 }
 
@@ -34,6 +40,12 @@ p {
     animation: fade-in 4.5s ease-in-out forwards;
 }
 
+.fade-out {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out backwards; 
+}
+
+
 .typewriter h1 {
     overflow: hidden;
     /* Ensures the content is not revealed until the animation */
@@ -50,13 +62,6 @@ p {
         blink-caret .75s step-end infinite;
 }
 
-.fullscreen-block {
-    max-width: 100%;
-    width: 100vw;
-    height: 100vh;
-    padding: 30px 30px 30px 30px;
-    scroll-snap-align: start;
-}
 
 .block-header {
     width: 60vw;
