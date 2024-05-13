@@ -4,6 +4,12 @@
         /* Add other font properties if needed */
 }
 
+@font-face {
+    font-family: 'Havelock';
+    src: url('../fonts/Havelock.woff') format('woff'),
+        /* Add other font properties if needed */
+}
+
 body {
     overflow: hidden;
     background-color: black;
@@ -29,9 +35,10 @@ h2 {
 
 p {
     color: white;
+    position: relative;
     padding-left: 2px;
     font-weight: 200;
-    font-family: 'Geologica';
+    font-family: 'Havelock';
     font-size: 18px;
 }
 

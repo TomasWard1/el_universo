@@ -17,9 +17,10 @@
 
 <div
     class="fade-in column"
-    style="display: flex;
+    style="
         justify-content: center; 
         align-items: center;
+        position: relative;
     height: 100vh;"
 >
     <h1>EL UNIVERSO</h1>

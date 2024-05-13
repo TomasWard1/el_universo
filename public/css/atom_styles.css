@@ -20,8 +20,8 @@
 }
 
 .atom {
-    width: 30vmin;
-    height: 30vmin;
+    width: 40vmin;
+    height: 40vmin;
     display: flex;
     align-items: center;
     justify-content: center;

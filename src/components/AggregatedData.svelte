@@ -1,131 +1,93 @@
 <!-- Script JS -->
 <script lang="ts">
-    import { onMount, onDestroy } from "svelte";
-    import { writable } from "svelte/store";
-    import Atom from "./Atom.svelte";
-    import * as d3 from "d3";
+  import { onMount, onDestroy } from "svelte";
+  import { writable } from "svelte/store";
+  import Atom from "./Atom.svelte";
+  import * as d3 from "d3";
 
-    type Alumno = {
-        age_1: number;
-        age_2: number;
-        language: string;
-        name: string;
-        td_rank: number[];
-        teacher: string;
-        work_year: number;
-    };
+  type Alumno = {
+    age_1: number;
+    age_2: number;
+    language: string;
+    name: string;
+    td_rank: number[];
+    teacher: string;
+    work_year: number;
+  };
 
-    type AlumnoData = {
-        age_1: number;
-        age_2: number;
-        language: string;
-        name: string;
-        td_rank: string;
-        teacher: string;
-        work_year: number;
-    };
+  type AlumnoData = {
+    age_1: number;
+    age_2: number;
+    language: string;
+    name: string;
+    td_rank: string;
+    teacher: string;
+    work_year: number;
+  };
 
-    //Cargar csv
-    let alumnos: Alumno[] = [];
+  //Cargar csv
+  let alumnos: Alumno[] = [];
 
-    //Mapear language a el color de la sombra de la entidad
-    let shadowColorConverter = d3
-        .scaleOrdinal()
-        .domain(["Python", "C++", "Assembler", "Swift", "Dart", "Java", "C"])
-        .range([
-            "rgba(250, 255, 0, 0.5)", // #FAFF00 with 50% opacity
-            "rgba(255, 0, 229, 0.5)", // #FF00E5 with 50% opacity
-            "rgba(255, 168, 0, 0.5)", // #FFA800 with 50% opacity
-            "rgba(255, 0, 0, 0.5)", // #FF0000 with 50% opacity
-            "rgba(0, 255, 240, 0.5)", // #00FFF0 with 50% opacity
-            "rgba(0, 255, 10, 0.5)", // #00FF0A with 50% opacity
-            "rgba(112, 0, 255, 0.5)", // #7000FF with 50% opacity
-        ]);
+  //Mapear language a el color de la sombra de la entidad
+  let shadowColorConverter = d3
+    .scaleOrdinal()
+    .domain(["Python", "C++", "Assembler", "Swift", "Dart", "Java", "C"])
+    .range([
+      "rgba(250, 255, 0, 0.5)", // #FAFF00 with 50% opacity
+      "rgba(255, 0, 229, 0.5)", // #FF00E5 with 50% opacity
+      "rgba(255, 168, 0, 0.5)", // #FFA800 with 50% opacity
+      "rgba(255, 0, 0, 0.5)", // #FF0000 with 50% opacity
+      "rgba(0, 255, 240, 0.5)", // #00FFF0 with 50% opacity
+      "rgba(0, 255, 10, 0.5)", // #00FF0A with 50% opacity
+      "rgba(112, 0, 255, 0.5)", // #7000FF with 50% opacity
+    ]);
 
-    let circleColorConverter = d3
-        .scaleOrdinal()
-        .domain(["Python", "C++", "Assembler", "Swift", "Dart", "Java", "C"])
-        .range([
-            "#FAFF00",
-            "#FF00E5",
-            "#FFA800",
-            "#FF0000",
-            "#00FFF0",
-            "#00FF0A",
-            "#7000FF",
-        ]);
+  let circleColorConverter = d3
+    .scaleOrdinal()
+    .domain(["Python", "C++", "Assembler", "Swift", "Dart", "Java", "C"])
+    .range([
+      "#FAFF00",
+      "#FF00E5",
+      "#FFA800",
+      "#FF0000",
+      "#00FFF0",
+      "#00FF0A",
+      "#7000FF",
+    ]);
 
-    let teacherImageConverter = d3
-        .scaleOrdinal()
-        .domain([
-            "Gravano",
-            "Pablo",
-            "Javier",
-            "Emma",
-            "David",
-            "Gervasio",
-            "Lucio",
-        ])
-        .range([
-            "public/images/gravano.png",
-            "public/images/pablo.png",
-            "public/images/javier.png",
-            "public/images/emma.png",
-            "public/images/david.png",
-            "public/images/gerva.png",
-            "public/images/lucio.png",
-        ]);
+  onMount(() => {
+    d3.csv("./data/data.csv", d3.autoType).then((data) => {
+      alumnos = data.map((row: AlumnoData) => {
+        return {
+          ...row,
+          td_rank: row.td_rank.split(",").map(Number),
+        };
+      });
 
-    let tdLogoConverter = d3
-        .scaleOrdinal()
-        .domain(["1", "2", "3", "4", "5"])
-        .range([
-            "public/images/td1Logo.svg",
-            "public/images/td2Logo.svg",
-            "public/images/td3Logo.svg",
-            "public/images/td4Logo.svg",
-            "public/images/td5Logo.svg",
-        ]);
-
-    onMount(() => {
-        d3.csv("./data/data.csv", d3.autoType).then((data) => {
-            alumnos = data.map((row: AlumnoData) => {
-                return {
-                    ...row,
-                    td_rank: row.td_rank.split(",").map(Number),
-                };
-            });
-
-            console.log(alumnos);
-        });
+      console.log(alumnos);
     });
+  });
 </script>
 
 <head>
-    <link rel="stylesheet" href="css/aggregated_data_styles.css" />
+  <link rel="stylesheet" href="css/aggregated_data_styles.css" />
 </head>
 
 <!-- Estructura contenido HTML -->
 <div
-    class="fade-in"
-    style="display: flex;
+  class="fade-in"
+  style="display: flex;
         justify-content: center; 
         align-items: center;
+        margin-inline: 100px;
     "
 >
-
-    <div class="grid-container">
-        {#each alumnos as a}
-            <Atom
-                alumno={a}
-                {circleColorConverter}
-                {shadowColorConverter}
-            ></Atom>
-        {/each}
-    </div>
+  <div class="grid-container">
+    {#each alumnos as a}
+      <Atom alumno={a} {circleColorConverter} {shadowColorConverter}></Atom>
+    {/each}
+  </div>
 </div>
-
-  
 
 <!-- Estilos CSS -->
 <style>

@@ -1,12 +1,12 @@
 .grid-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 100px 20px;
-    overflow-y: hidden;
-    width: 100vw;
-    margin-top: 100px;
-    place-items: center;
-}
-
-
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(40vmin, 1fr));
+  /* repeat(3, 1fr); */
+  gap: 50px 20px;
+  overflow-y: visible ;
+  width: 100vw;
+  margin-top: 100px;
+  margin-bottom: 50px;
   
+  place-items: center;
+}
