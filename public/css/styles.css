@@ -1,12 +1,12 @@
-
 @font-face {
     font-family: 'Anurati';
     src: url('../fonts/Anurati-Regular.woff') format('woff'),
-    /* Add other font properties if needed */
+        /* Add other font properties if needed */
 }
+
 body {
-	overflow: hidden;
-    background-color: black;	
+    overflow: hidden;
+    background-color: black;
 }
 
 h1 {
@@ -15,7 +15,7 @@ h1 {
     letter-spacing: 10px;
     font-size: 60px;
     text-align: center
-    /* display: block; */
+        /* display: block; */
 }
 
 
@@ -35,6 +35,11 @@ p {
     font-size: 18px;
 }
 
+.center {
+    justify-content: center;
+    align-items: center;
+}
+
 .fade-in {
     opacity: 0;
     animation: fade-in 4.5s ease-in-out forwards;
@@ -42,7 +47,7 @@ p {
 
 .fade-out {
     opacity: 0;
-    transition: opacity 0.5s ease-in-out backwards; 
+    transition: opacity 0.5s ease-in-out backwards;
 }
 
 
@@ -78,16 +83,17 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-  
-  
+}
+
+
 
 .column {
     display: flex;
     flex-direction: column;
     place-items: center;
     /* Add additional styling as needed */
-  }
+}
+
 
 /* The typing effect */
 @keyframes typing {

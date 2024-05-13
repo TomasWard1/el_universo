@@ -1,8 +1,6 @@
 <!-- Script JS -->
 <script lang="ts">
- 
 </script>
-
 
 <head>
     <link rel="stylesheet" href="css/landing.css" />
@@ -17,18 +15,21 @@
     <div id="stars4"></div>
 </div>
 
-
-
-    <div
-        class="fade-in"
-        style="display: flex;
+<div
+    class="fade-in column"
+    style="display: flex;
         justify-content: center; 
         align-items: center;
-    height: inherit;"
-    >
-        <h1>EL UNIVERSO</h1>
+    height: 100vh;"
+>
+    <h1>EL UNIVERSO</h1>
+    <div class="scroll-prompt" style="opacity: 1;">
+        <div class="scroll-prompt-arrow-container">
+            <div class="scroll-prompt-arrow"><div></div></div>
+            <div class="scroll-prompt-arrow"><div></div></div>
+        </div>
     </div>
-
+</div>
 
 <!-- Estilos CSS -->
 <style>

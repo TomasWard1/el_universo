@@ -3,7 +3,7 @@
     export let alumno;
     export let circleColorConverter;
     export let shadowColorConverter;
-    let ringCount = alumno.age_2 - alumno.age_1 + 1;
+    let ringCount = alumno.age_2 - alumno.age_1 +1 ;
     let entityColor = circleColorConverter(alumno.language);
     let diffuseEntityColor = shadowColorConverter(alumno.language);
     let orbitTime = 15;
@@ -28,8 +28,16 @@
             </svg>
             
            {/if}
-           <h1 style="text-align: center; color: black">J</h1>
-           
+          
+           <p>
+            {#if alumno.language === 'C++'}
+                {alumno.teacher.substring(0, 2).toUpperCase()}{alumno.td_rank[0]}CPP
+            {:else if alumno.language === 'C'}
+                {alumno.teacher.substring(0, 2).toUpperCase()}{alumno.td_rank[0]}CCC
+            {:else}
+                {alumno.teacher.substring(0, 2).toUpperCase()}{alumno.td_rank[0]}{alumno.language.substring(0,3).toUpperCase()}
+            {/if}
+            </p>
           
         </div>
         {#each { length: ringCount } as _, i}

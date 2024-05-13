@@ -55,7 +55,15 @@
     <!-- {#if alumno.work_year <= 2024}
       <div class="diagonal" style="background-color: {entityColor};"></div>
     {/if} -->
-  
+    <p>
+      {#if alumno.language === 'C++'}
+          {alumno.teacher.substring(0, 2).toUpperCase()}{alumno.td_rank[0]}CPP
+      {:else if alumno.language === 'C'}
+          {alumno.teacher.substring(0, 2).toUpperCase()}{alumno.td_rank[0]}CCC
+      {:else}
+          {alumno.teacher.substring(0, 2).toUpperCase()}{alumno.td_rank[0]}{alumno.language.substring(0,3).toUpperCase()}
+      {/if}
+      </p>
   </div>
   <p style="padding-top: 40px;">{alumno.name}</p>
 </div>

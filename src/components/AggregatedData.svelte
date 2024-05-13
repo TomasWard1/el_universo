@@ -106,17 +106,13 @@
 </head>
 
 <!-- Estructura contenido HTML -->
-
-<div class="fullscreen-block" style="height:auto; width: 100vw;">
-    <div class="block-header">
-        <h1>Átomos que construyen una molécula</h1>
-        <p>
-            "Tecnología Digital? Y esa carrera? Que es tipo ingenieria?" No, no
-            somos ingenieros. Somos mucho más que eso. Programadores,
-            diseñadores, emprendedores, analistas, ideadores, cuestionadores. El
-            estudiante de TD pronto dominará el mundo.
-        </p>
-    </div>
+<div
+    class="fade-in"
+    style="display: flex;
+        justify-content: center; 
+        align-items: center;
+    "
+>
 
     <div class="grid-container">
         {#each alumnos as a}
@@ -127,8 +123,10 @@
             ></Atom>
         {/each}
     </div>
-
 </div>
+
+  
+
 <!-- Estilos CSS -->
 <style>
 </style>
