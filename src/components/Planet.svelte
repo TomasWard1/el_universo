@@ -4,6 +4,7 @@
   export let circleColorConverter;
   export let teacherRuneConverter;
   export let shadowColorConverter;
+  export let isThemed;
   let ringCount = alumno.age_2 - alumno.age_1 + 1;
   let entityColor = circleColorConverter(alumno.language);
   let diffuseEntityColor = shadowColorConverter(alumno.language);
@@ -40,11 +41,8 @@
         class="nucleus-shadow"
         style="background: radial-gradient({entityColor} 0%, black 40%);"
       ></div>
-      <div
-        class="nucleus"
-        style="background-color: {entityColor};"
-      >
-    <img src={teacherRuneConverter(alumno)} alt="">
+      <div class="nucleus" style="background-color: {entityColor};">
+        <img src={teacherRuneConverter(alumno.teacher)} alt="" />
         {#if alumno.work_year <= 2024}
           <svg width="987" height="987" viewBox="0 0 987 987" fill="none">
             <path
@@ -98,8 +96,10 @@
       {/each}
     </div>
   </div>
-  <h2 style="font-size: 20px; top: -80px; text-align:center; position: relative;">
-    {generatePlanetName(alumno)}
+  <h2
+    style="font-size: 20px; top: -80px; text-align:center; position: relative;"
+  >{isThemed ? generatePlanetName(alumno) : alumno.name}
+    
   </h2>
 </div>
 

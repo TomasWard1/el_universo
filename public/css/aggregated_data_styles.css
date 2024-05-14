@@ -1,9 +1,0 @@
-.grid-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(50vmin, 1fr));
-  gap: 60px 25px;
-  width: 100vw;
-  margin-top: 50px;
-  margin-bottom: 50px;
-  place-items: center;
-}

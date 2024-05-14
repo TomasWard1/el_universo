@@ -84,6 +84,13 @@ p {
   overflow: visible;
 }
 
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
 @keyframes fade-in {
   from {
     opacity: 0;
