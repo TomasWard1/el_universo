@@ -1,5 +1,75 @@
-/* Estilos globales */
+@font-face {
+  font-family: "Anurati";
+  src: url("../fonts/Anurati-Regular.woff") format("woff");
+  /* Add other font properties if needed */
+}
+
+@font-face {
+  font-family: "Havelock";
+  src: url("../fonts/Havelock.woff") format("woff");
+  /* Add other font properties if needed */
+}
 
 body {
-    background-color: black;
+
+  background-color: black;
+  /* scroll-snap-type: y mandatory; */
+}
+
+h1 {
+  color: white;
+  font-family: "Anurati";
+  letter-spacing: 10px;
+  font-size: 60px;
+  text-align: center;
+  /* display: block; */
+}
+
+h2 {
+  color: white;
+  padding-left: 2px;
+  font-weight: 400;
+  font-family: "Geologica";
+  font-size: 22px;
+}
+
+p {
+  color: white;
+  position: relative;
+  padding-left: 2px;
+  font-weight: 200;
+  font-family: "Havelock";
+  font-size: 18px;
+}
+
+.center {
+  justify-content: center;
+  align-items: center;
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fade-in 4.5s ease-in-out forwards;
+}
+
+.fade-out {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out backwards;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  /* Add additional styling as needed */
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }

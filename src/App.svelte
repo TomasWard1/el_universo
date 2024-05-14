@@ -1,8 +1,14 @@
 <!-- Script JS -->
 <script>
+    import { onMount } from "svelte";
+    import Landing from "./components/Landing.svelte";
+    import AggregatedData from "./components/AggregatedData.svelte";
 </script>
 
-<!-- Estructura contenido HTML -->
+<main>
+    <Landing></Landing>
+    <AggregatedData></AggregatedData>
+</main>
 
 <!-- Estilos CSS -->
 <style>
