@@ -19,7 +19,7 @@
             position: relative;
         height: 100vh;"
   >
-    <h1>RUTAS ESTELARES</h1>
+    <h1>UNIVERSO</h1>
     <h2>Un universo no existe sin sus planetas</h2>
     <div class="scroll-prompt" style="opacity: 1;">
       <div class="scroll-prompt-arrow-container">

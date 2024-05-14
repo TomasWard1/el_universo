@@ -119,7 +119,7 @@
 
 <!-- Estructura contenido HTML -->
 <div class="fade-in scroll-snap" style="">
-  <h1 style="margin-top: 85px">{isThemed ? "LA GALAXIA" : "ALUMNOS"}</h1>
+  <h1 style="margin-top: 85px">{isThemed ? "NUESTRA GALAXIA" : "ALUMNOS"}</h1>
   <div class="row" style="margin-top: 30px;">
     <button
       class="button"
