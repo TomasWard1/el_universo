@@ -6,11 +6,9 @@
   <link rel="stylesheet" href="css/landing.css" />
 </head>
 
-<!-- Estructura contenido HTML -->  
+<!-- Estructura contenido HTML -->
 
 <div class="scroll-snap-container">
-
-
   <div
     class="fade-in column scroll-snap"
     style="
@@ -19,8 +17,8 @@
             position: relative;
         height: 100vh;"
   >
-    <h1>UNIVERSO</h1>
-    <h2>Un universo no existe sin sus planetas</h2>
+    <h1>EL UNIVERSO</h1>
+    <h2>no existe sin sus planetas</h2>
     <div class="scroll-prompt" style="opacity: 1;">
       <div class="scroll-prompt-arrow-container">
         <div class="scroll-prompt-arrow"><div></div></div>

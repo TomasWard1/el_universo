@@ -34,7 +34,7 @@
 </head>
 
 <!-- Estructura contenido HTML -->
-<div class="column" style="scroll-snap-align: start;">
+<div class="column">
   <div class="planet-body">
     <div class="planet">
       <div
