@@ -1,137 +1,75 @@
 @font-face {
-    font-family: 'Anurati';
-    src: url('../fonts/Anurati-Regular.woff') format('woff'),
-        /* Add other font properties if needed */
+  font-family: "Anurati";
+  src: url("../fonts/Anurati-Regular.woff") format("woff");
+  /* Add other font properties if needed */
 }
 
 @font-face {
-    font-family: 'Havelock';
-    src: url('../fonts/Havelock.woff') format('woff'),
-        /* Add other font properties if needed */
+  font-family: "Havelock";
+  src: url("../fonts/Havelock.woff") format("woff");
+  /* Add other font properties if needed */
 }
 
 body {
-    overflow: hidden;
-    background-color: black;
+
+  background-color: black;
+  /* scroll-snap-type: y mandatory; */
 }
 
 h1 {
-    color: white;
-    font-family: 'Anurati';
-    letter-spacing: 10px;
-    font-size: 60px;
-    text-align: center
-        /* display: block; */
+  color: white;
+  font-family: "Anurati";
+  letter-spacing: 10px;
+  font-size: 60px;
+  text-align: center;
+  /* display: block; */
 }
 
-
 h2 {
-    color: white;
-    padding-left: 2px;
-    font-weight: 400;
-    font-family: 'Geologica';
-    font-size: 22px;
+  color: white;
+  padding-left: 2px;
+  font-weight: 400;
+  font-family: "Geologica";
+  font-size: 22px;
 }
 
 p {
-    color: white;
-    position: relative;
-    padding-left: 2px;
-    font-weight: 200;
-    font-family: 'Havelock';
-    font-size: 18px;
+  color: white;
+  position: relative;
+  padding-left: 2px;
+  font-weight: 200;
+  font-family: "Havelock";
+  font-size: 18px;
 }
 
 .center {
-    justify-content: center;
-    align-items: center;
+  justify-content: center;
+  align-items: center;
 }
 
 .fade-in {
-    opacity: 0;
-    animation: fade-in 4.5s ease-in-out forwards;
+  opacity: 0;
+  animation: fade-in 4.5s ease-in-out forwards;
 }
 
 .fade-out {
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out backwards;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out backwards;
 }
-
-
-.typewriter h1 {
-    overflow: hidden;
-    /* Ensures the content is not revealed until the animation */
-    border-right: .15em solid white;
-    /* The typwriter cursor */
-    white-space: nowrap;
-    /* Keeps the content on a single line */
-    margin: 0 auto;
-    /* Gives that scrolling effect as the typing happens */
-    letter-spacing: .15em;
-    /* Adjust as needed */
-    animation:
-        typing 3.5s steps(40, end),
-        blink-caret .75s step-end infinite;
-}
-
-
-.block-header {
-    width: 60vw;
-    margin-bottom: 60px;
-}
-
-main {
-    overflow-y: scroll;
-    scroll-snap-type: y mandatory;
-    height: 100vh;
-}
-
-.row {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-
 
 .column {
-    display: flex;
-    flex-direction: column;
-    place-items: center;
-    /* Add additional styling as needed */
-}
-
-
-/* The typing effect */
-@keyframes typing {
-    from {
-        width: 0
-    }
-
-    to {
-        width: 100%
-    }
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  /* Add additional styling as needed */
 }
 
 @keyframes fade-in {
-    from {
-        opacity: 0;
-    }
+  from {
+    opacity: 0;
+  }
 
-    to {
-        opacity: 1;
-    }
-}
-
-/* The typewriter cursor effect */
-@keyframes blink-caret {
-
-    from,
-    to {
-        border-color: transparent
-    }
-
-    50% {
-        border-color: white;
-    }
+  to {
+    opacity: 1;
+  }
 }

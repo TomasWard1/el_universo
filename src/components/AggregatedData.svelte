@@ -1,8 +1,7 @@
 <!-- Script JS -->
 <script lang="ts">
   import { onMount, onDestroy } from "svelte";
-  import { writable } from "svelte/store";
-  import Atom from "./Atom.svelte";
+  import Planet from "./Planet.svelte";
   import * as d3 from "d3";
 
   type Alumno = {
@@ -55,6 +54,27 @@
       "#7000FF",
     ]);
 
+  let teacherRuneConverter = d3
+    .scaleOrdinal()
+    .domain([
+      "Gravano",
+      "Pablo",
+      "Javier",
+      "Emma",
+      "David",
+      "Gervasio",
+      "Lucio",
+    ])
+    .range([
+      "images/runeGravano.svg",
+      "images/runePablo.svg",
+      "images/runeJavi.svg",
+      "images/runeEma.svg",
+      "images/runeDavid.svg",
+      "images/runeGerva.svg",
+      "images/runeLucio.svg",
+    ]);
+
   onMount(() => {
     d3.csv("./data/data.csv", d3.autoType).then((data) => {
       alumnos = data.map((row: AlumnoData) => {
@@ -75,16 +95,15 @@
 
 <!-- Estructura contenido HTML -->
 <div
-  class="fade-in"
+  class="fade-in center"
   style="display: flex;
-        justify-content: center; 
-        align-items: center;
-        margin-inline: 100px;
+        scroll-snap-align: start;
+   
     "
 >
   <div class="grid-container">
     {#each alumnos as a}
-      <Atom alumno={a} {circleColorConverter} {shadowColorConverter}></Atom>
+      <Planet alumno={a} {circleColorConverter} {shadowColorConverter} {teacherRuneConverter}></Planet>
     {/each}
   </div>
 </div>
