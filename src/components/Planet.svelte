@@ -9,8 +9,6 @@
   let diffuseEntityColor = shadowColorConverter(alumno.language);
   let orbitTime = 15;
 
-  console.log(teacherRuneConverter(alumno))
-
   function generatePlanetName(alumno) {
     let nameSub = alumno.name.substring(0, 2).toUpperCase();
     let surnameSub = alumno.name.split(" ")[1].substring(0, 2);
@@ -100,9 +98,9 @@
       {/each}
     </div>
   </div>
-  <p style="font-size: 20px; top: -50px; text-align:center">
+  <h2 style="font-size: 20px; top: -80px; text-align:center; position: relative;">
     {generatePlanetName(alumno)}
-  </p>
+  </h2>
 </div>
 
 <!-- Estilos CSS -->
