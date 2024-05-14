@@ -41,6 +41,7 @@
   opacity: 0.25;
 }
 
+
 .nucleus {
   width: 20%;
   height: 20%;
@@ -77,15 +78,15 @@
   left: 62%;
   transform: translateX(-50%);
   width: 4.2vmin;
-  opacity: 0.5;
+  opacity: 1;
   height: 4.2vmin;
 }
 
- img {
+.nucleus img {
   position: absolute;
   transform: scale(.3);
   top: -32%;
-  opacity: .8;
+  opacity: .5;
 } 
 
 /*** MOON ***/

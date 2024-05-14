@@ -24,6 +24,18 @@
     work_year: number;
   };
 
+  let isThemed = true;
+
+  function handleToggle() {
+    if (!isThemed) {
+      isThemed = false;
+    } else {
+      isThemed = true;
+    }
+    console.log(isThemed);
+    return;
+  }
+
   //Cargar csv
   let alumnos: Alumno[] = [];
 
@@ -87,23 +99,88 @@
       console.log(alumnos);
     });
   });
+
+  let showPopup = false;
+
+  function closePopup() {
+    showPopup = false;
+  }
+
+  function handleKeyDown(event) {
+    if (event.key === "Escape") {
+      closePopup();
+    }
+  }
 </script>
 
 <head>
-  <link rel="stylesheet" href="css/aggregated_data_styles.css" />
+  <link rel="stylesheet" href="css/entities.css" />
 </head>
 
 <!-- Estructura contenido HTML -->
-<div
-  class="fade-in center"
-  style="display: flex;
-        scroll-snap-align: start;
-   
-    "
->
+<div class="fade-in scroll-snap" style="">
+  <h1 style="margin-top: 85px">{isThemed ? "NUESTRA GALAXIA" : "ALUMNOS"}</h1>
+  <div class="row" style="margin-top: 30px;">
+    <button
+      class="button"
+      style=" z-index:2;"
+      on:click={() => (showPopup = true)}
+    >
+      <i class="fa {isThemed ? 'fa-map' : 'fa-expand'}"></i>
+      {isThemed ? "Mapa" : "Leyenda"}
+    </button>
+    <div class="row" style="gap: 10px;">
+      <label class="switch" style=" z-index:2;">
+        <input
+          type="checkbox"
+          bind:checked={isThemed}
+          on:change={handleToggle}
+        />
+        <span class="slider round"></span>
+      </label>
+      <h2 style="margin-top: 10px; z-index:2;">
+        {isThemed ? "Temático" : "Aburrido"}
+      </h2>
+    </div>
+  </div>
+
+  {#if showPopup}
+    <div
+      class="popup-overlay"
+      on:click={closePopup}
+      on:keydown={handleKeyDown}
+      tabindex="1"
+      aria-label="Close Popup"
+    >
+      <div
+        class="popup"
+        on:click|stopPropagation
+        tabindex="0"
+        on:keydown={handleKeyDown}
+        style="background-image: url('images/{isThemed
+          ? 'leyenda_themed'
+          : 'leyenda'}.png');"
+      >
+        <button class="close-button" on:click={closePopup} aria-label="Close"
+          >&times;</button
+        >
+      </div>
+    </div>
+  {/if}
+  <!-- <p>
+    SERIA INJUSTO REPRESENTAR A LOS ESTUDIANTES DE TD CON OTRA COSA QUE NO SEA
+    UN PLANETA. CADA UNO TIENE SU DIRECCION, SU ORBITA, SU CENTRO DE GRAVEDAD,
+    SUS ATRACCIONES, SUS CICLOS
+  </p> -->
   <div class="grid-container">
     {#each alumnos as a}
-      <Planet alumno={a} {circleColorConverter} {shadowColorConverter} {teacherRuneConverter}></Planet>
+      <Planet
+        alumno={a}
+        {circleColorConverter}
+        {shadowColorConverter}
+        {teacherRuneConverter}
+        {isThemed}
+      ></Planet>
     {/each}
   </div>
 </div>

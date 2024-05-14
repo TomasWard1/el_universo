@@ -11,9 +11,13 @@
 }
 
 body {
-
   background-color: black;
-  /* scroll-snap-type: y mandatory; */
+}
+
+main {
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  height: 100vh;
 }
 
 h1 {
@@ -22,14 +26,29 @@ h1 {
   letter-spacing: 10px;
   font-size: 60px;
   text-align: center;
-  /* display: block; */
+  margin-bottom: 20px;
+}
+
+.scroll-snap-container {
+  scroll-snap-type: y mandatory;
+}
+
+.scroll-snap {
+  scroll-snap-align: start;
+}
+
+.fullscreen-block {
+  max-width: 100%;
+  width: 100vw;
+  height: 100vh;
+  padding: 30px 30px 30px 30px;
+  scroll-snap-align: start;
 }
 
 h2 {
   color: white;
-  padding-left: 2px;
-  font-weight: 400;
-  font-family: "Geologica";
+  text-align: center;
+  font-family: "Havelock";
   font-size: 22px;
 }
 
@@ -38,7 +57,7 @@ p {
   position: relative;
   padding-left: 2px;
   font-weight: 200;
-  font-family: "Havelock";
+  font-family: "Ubuntu";
   font-size: 18px;
 }
 
@@ -50,6 +69,7 @@ p {
 .fade-in {
   opacity: 0;
   animation: fade-in 4.5s ease-in-out forwards;
+  overflow-x: hidden;
 }
 
 .fade-out {
@@ -61,7 +81,14 @@ p {
   display: flex;
   flex-direction: column;
   place-items: center;
-  /* Add additional styling as needed */
+  overflow: visible;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
 }
 
 @keyframes fade-in {

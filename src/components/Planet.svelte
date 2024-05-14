@@ -4,12 +4,11 @@
   export let circleColorConverter;
   export let teacherRuneConverter;
   export let shadowColorConverter;
+  export let isThemed;
   let ringCount = alumno.age_2 - alumno.age_1 + 1;
   let entityColor = circleColorConverter(alumno.language);
   let diffuseEntityColor = shadowColorConverter(alumno.language);
   let orbitTime = 15;
-
-  console.log(teacherRuneConverter(alumno))
 
   function generatePlanetName(alumno) {
     let nameSub = alumno.name.substring(0, 2).toUpperCase();
@@ -35,18 +34,15 @@
 </head>
 
 <!-- Estructura contenido HTML -->
-<div class="column" style="scroll-snap-align: start;">
+<div class="column">
   <div class="planet-body">
     <div class="planet">
       <div
         class="nucleus-shadow"
         style="background: radial-gradient({entityColor} 0%, black 40%);"
       ></div>
-      <div
-        class="nucleus"
-        style="background-color: {entityColor};"
-      >
-    <img src={teacherRuneConverter(alumno)} alt="">
+      <div class="nucleus" style="background-color: {entityColor};">
+        <img src={teacherRuneConverter(alumno.teacher)} alt="" />
         {#if alumno.work_year <= 2024}
           <svg width="987" height="987" viewBox="0 0 987 987" fill="none">
             <path
@@ -100,9 +96,11 @@
       {/each}
     </div>
   </div>
-  <p style="font-size: 20px; top: -50px; text-align:center">
-    {generatePlanetName(alumno)}
-  </p>
+  <h2
+    style="font-size: 20px; top: -80px; text-align:center; position: relative;"
+  >{isThemed ? generatePlanetName(alumno) : alumno.name}
+    
+  </h2>
 </div>
 
 <!-- Estilos CSS -->
