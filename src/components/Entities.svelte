@@ -167,11 +167,6 @@
       </div>
     </div>
   {/if}
-  <!-- <p>
-    SERIA INJUSTO REPRESENTAR A LOS ESTUDIANTES DE TD CON OTRA COSA QUE NO SEA
-    UN PLANETA. CADA UNO TIENE SU DIRECCION, SU ORBITA, SU CENTRO DE GRAVEDAD,
-    SUS ATRACCIONES, SUS CICLOS
-  </p> -->
   <div class="grid-container">
     {#each alumnos as a}
       <Planet
